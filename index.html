@@ -1,0 +1,128 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Controle Financeiro 2025</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Login Overlay -->
+  <div class="login-overlay" id="loginOverlay">
+    <div class="login-container">
+      <div class="profile-section">
+        <img id="profilePic" src="https://images.app.goo.gl/2ayDQgrFL6HoJr74A" alt="Profile Picture" class="profile-image">
+      </div>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Usuário" required>
+        <input type="password" id="password" placeholder="Senha" required>
+        <button type="submit" class="login-btn">Entrar</button>
+        <p id="loginError" class="error-message"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Application Container -->
+  <div class="main-app-container" id="mainAppContainer" style="display: none;">
+    <div class="dashboard-container">
+      <div class="dashboard-header">
+        <h1>Controle Financeiro 2025</h1>
+        <div class="theme-toggle">
+          <button id="lightThemeBtn"><i class="fas fa-sun"></i></button>
+          <button id="darkThemeBtn"><i class="fas fa-moon"></i></button>
+        </div>
+        <button id="logoutBtn" class="logout-btn">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Sair</span>
+        </button>
+      </div>
+
+      <div class="dashboard-content">
+        <div class="dashboard-main-view">
+          <div class="summary-section">
+            <div class="summary-card total-income">
+              <h3>Total de Ganhos</h3>
+              <p id="totalIncome">R$ 0,00</p>
+            </div>
+            <div class="summary-card total-expenses">
+              <h3>Total de Despesas</h3>
+              <p id="totalExpenses">R$ 0,00</p>
+            </div>
+            <div class="summary-card current-balance">
+              <h3>Saldo Atual</h3>
+              <p id="currentBalance">R$ 0,00</p>
+            </div>
+            <div class="summary-card credit-card-balance">
+              <h3>Saldo do Cartão</h3>
+              <p id="creditCardBalance">R$ 0,00</p>
+            </div>
+          </div>
+
+          <div class="dashboard-buttons">
+            <button onclick="openPage('graphicsPage')" class="dashboard-btn">
+              <i class="fas fa-chart-bar"></i>
+              <span>Gráficos</span>
+            </button>
+            <button onclick="openPage('cardsPage')" class="dashboard-btn">
+              <i class="fas fa-credit-card"></i>
+              <span>Cartões</span>
+            </button>
+            <button onclick="openPage('statementsPage')" class="dashboard-btn">
+              <i class="fas fa-file-invoice-dollar"></i>
+              <span>Extratos</span>
+            </button>
+            <button onclick="openPage('goalsPage')" class="dashboard-btn">
+              <i class="fas fa-bullseye"></i>
+              <span>Metas</span>
+            </button>
+            <button onclick="openPage('reportsPage')" class="dashboard-btn">
+              <i class="fas fa-file-alt"></i>
+              <span>Relatórios</span>
+            </button>
+          </div>
+
+          <div class="quick-actions">
+            <button id="addIncomeBtn" class="quick-action-btn income-btn">
+              <i class="fas fa-plus"></i> Adicionar Ganho
+            </button>
+            <button id="addExpenseBtn" class="quick-action-btn expense-btn">
+              <i class="fas fa-minus"></i> Adicionar Despesa
+            </button>
+          </div>
+
+          <div class="charts-section">
+            <div class="chart-container">
+              <h3>Distribuição de Gastos</h3>
+              <canvas id="expenseDistributionChart"></canvas>
+            </div>
+            <div class="chart-container">
+              <h3>Ganhos vs Despesas</h3>
+              <canvas id="monthlyComparisonChart"></canvas>
+            </div>
+          </div>
+
+          <div class="notes-section">
+            <h3>Anotações Pessoais</h3>
+            <textarea id="personalNotes" placeholder="Adicione suas observações financeiras aqui..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openPage(pageId) {
+      document.querySelectorAll('.page-view').forEach(page => {
+        page.style.display = 'none';
+      });
+      document.getElementById(pageId).style.display = 'block';
+    }
+  </script>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
