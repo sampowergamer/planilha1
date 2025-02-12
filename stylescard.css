@@ -1,0 +1,114 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --background-light: #f4f6f7;
+    --background-dark: #1a1a2e;
+    --text-light: #2c3e50;
+    --text-dark: #ffffff;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-light);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+}
+
+#cards-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--text-dark);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--text-light);
+}
+
+#pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s;
+}
+
+#pagination button:hover {
+    background-color: #2980b9;
+}
+
+#pagination button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+#open-finance-section {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--text-dark);
+    margin: 20px auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    max-width: 600px;
+}
+
+#connect-open-finance {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#connect-open-finance:hover {
+    background-color: #27ae60;
+}

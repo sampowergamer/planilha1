@@ -1,7 +1,7 @@
 import { LoginManager } from './login.js';
 import { DashboardManager } from './dashboard.js';
 import { GraphicsManager } from './graphics.js';
-import { CreditCardManager } from './credit-cards.js';
+import { CreditCardManager } from './cards.js';
 import { StatementsManager } from './statements.js';
 import { GoalsManager } from './goals.js';
 import { ReportsManager } from './reports.js';
